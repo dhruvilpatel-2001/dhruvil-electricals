@@ -1,102 +1,98 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import AdminShell from "../../AdminShell";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase, uploadImage } from "@/lib/supabaseClient";
+import Toast from "@/app/components/Toast";
 
 export default function AdminWorkEditPage() {
   const router = useRouter();
-  const params = useParams();
-  const id = params.id;
+  const { id } = useParams();
   const [form, setForm] = useState(null);
+  const [uploading, setUploading] = useState(false);
+  const [toast, setToast] = useState("");
 
   useEffect(() => {
-    const fetchWork = async () => {
-      const { data, error } = await supabase.from("works").select("*").eq("id", id).maybeSingle();
-      if (!error && data) {
-        setForm({
-          title: data.title || "",
-          description: data.description || "",
-          category: data.category || "",
-          image_url: data.image_url || ""
-        });
-      }
+    const loadWork = async () => {
+      const { data } = await supabase.from("works").select("*").eq("id", id).maybeSingle();
+      setForm(data);
     };
-    if (id) fetchWork();
+    loadWork();
   }, [id]);
 
   const handleChange = (e) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
+  // 📌 Upload new image
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    setUploading(true);
+    try {
+      const url = await uploadImage(file, "works");
+      setForm((f) => ({ ...f, image_url: url }));
+      setToast("Image updated!");
+    } catch (err) {
+      alert("Upload failed: " + err.message);
+    }
+    setUploading(false);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { error } = await supabase.from("works").update(form).eq("id", id);
-    if (error) {
-      alert("Error updating: " + error.message);
-    } else {
-      router.push("/admin/works");
+
+    if (error) alert("Update error: " + error.message);
+    else {
+      setToast("Updated!");
+      setTimeout(() => router.push("/admin/works"), 1500);
     }
   };
 
-  if (!form) {
-    return (
-      <AdminShell title="Edit Work">
-        <p>Loading…</p>
-      </AdminShell>
-    );
-  }
+  if (!form) return <AdminShell title="Edit Work">Loading…</AdminShell>;
 
   return (
     <AdminShell title={`Edit Work #${id}`}>
       <form onSubmit={handleSubmit} className="admin-form">
+
         <div className="mb-3">
           <label className="form-label">Title</label>
-          <input
-            name="title"
-            className="form-control"
-            value={form.title}
-            onChange={handleChange}
-            required
-          />
+          <input name="title" className="form-control" value={form.title} onChange={handleChange} />
         </div>
 
         <div className="mb-3">
           <label className="form-label">Category</label>
-          <input
-            name="category"
-            className="form-control"
-            value={form.category}
-            onChange={handleChange}
-          />
+          <input name="category" className="form-control" value={form.category} onChange={handleChange} />
         </div>
 
+        {/* IMAGE UPLOAD */}
         <div className="mb-3">
-          <label className="form-label">Image URL</label>
-          <input
-            name="image_url"
-            className="form-control"
-            value={form.image_url}
-            onChange={handleChange}
-          />
+          <label className="form-label">Upload New Image</label>
+          <input type="file" className="form-control" onChange={handleFileUpload} />
+          {uploading && <small className="text-info">Uploading…</small>}
+
+          {form.image_url && (
+            <img
+              src={form.image_url}
+              className="img-fluid mt-2 rounded"
+              style={{ maxHeight: "150px" }}
+            />
+          )}
         </div>
 
         <div className="mb-3">
           <label className="form-label">Description</label>
-          <textarea
-            name="description"
-            className="form-control"
-            rows={3}
-            value={form.description}
-            onChange={handleChange}
-          />
+          <textarea name="description" className="form-control" rows="3"
+            value={form.description} onChange={handleChange}></textarea>
         </div>
 
-        <button className="btn btn-primary" type="submit">
-          Update
-        </button>
+        <button className="btn btn-primary">Update</button>
       </form>
+
+      <Toast message={toast} show={toast !== ""} />
     </AdminShell>
   );
 }
