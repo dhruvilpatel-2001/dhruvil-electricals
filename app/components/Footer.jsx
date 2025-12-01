@@ -7,7 +7,7 @@ export default async function Footer() {
     .maybeSingle();
 
   return (
-    <footer className="footer-section mt-5" id="contact">
+    <footer className="footer-section pt-5" id="contact">
       <div className="container">
 
         <div className="footer-grid">
