@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import AdminShell from "../../AdminShell";
-import { supabase, uploadImage } from "@/lib/supabaseClient";
+import { supabase } from "@/lib/supabaseClient";
+import { uploadImage } from "@/lib/uploadImage";
 import Toast from "@/app/components/Toast";
 
 export default function AdminWorkEditPage() {
