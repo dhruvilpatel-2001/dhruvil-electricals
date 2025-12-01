@@ -8,6 +8,7 @@ import HomeVideoSection from "./components/HomeVideoSection";
 import HomeFaqSection from "./components/HomeFaqSection";
 import HomeTestimonialsSection from "./components/HomeTestimonialsSection";
 import HomeBrandsSection from "./components/HomeBrandsSection";
+import ContactPage from "./contact/page";
 
 export default async function HomePage() {
   const [
@@ -39,6 +40,7 @@ export default async function HomePage() {
 
       <StatsSection stats={stats || []} />
       <WhyChooseSection items={whyItems || []} />
+      <ContactPage/>
       <CTASection cta={cta || null} />
     </>
   );

@@ -2,7 +2,7 @@ export default function HomeTestimonialsSection({ testimonials }) {
   if (!testimonials?.length) return null;
 
   return (
-    <section className="py-5">
+    <section id="testimonials" className="py-5">
       <div className="container">
 
         <div className="text-center mb-5">

@@ -50,7 +50,7 @@ export default function HomeFaqSection({ faq }) {
   const visibleFaq = showAll ? faq : faq.slice(0, 3);
 
   return (
-    <section className="home-faq-section py-5">
+    <section id="faq" className="home-faq-section py-5">
       <div className="container">
         
         <div className="text-center mb-5">
