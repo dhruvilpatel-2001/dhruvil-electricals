@@ -35,7 +35,7 @@ export default async function HomePage() {
       <HomeTestimonialsSection testimonials={testimonials || []} />
       <HomeFaqSection faq={faq || []} />
       {/* <HomeVideoSection /> */}
-      <HomeBrandsSection />
+      {/* <HomeBrandsSection /> */}
 
       <StatsSection stats={stats || []} />
       <WhyChooseSection items={whyItems || []} />
