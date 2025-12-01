@@ -1,10 +1,25 @@
 export default function HomeBrandsSection() {
   const logos = [
-    "/brands/lg.png",
-    "/brands/havells.png",
-    "/brands/crompton.png",
-    "/brands/siemens.png",
-    "/brands/abb.png"
+    "/images/lubi.png",
+    "/images/lubi.png",
+    "/images/lubi.png",
+    "/images/lubi.png",
+    "/images/lubi.png",
+    "/images/lubi.png",
+    "/images/lubi.png",
+    "/images/lubi.png",
+    "/images/lubi.png",
+    "/images/lubi.png",
+    "/images/lubi.png",
+    "/images/lubi.png",
+    "/images/lubi.png",
+    "/images/lubi.png",
+    "/images/lubi.png",
+    "/images/lubi.png",
+    // "/brands/havells.png",
+    // "/brands/crompton.png",
+    // "/brands/siemens.png",
+    // "/brands/abb.png"
   ];
 
   return (

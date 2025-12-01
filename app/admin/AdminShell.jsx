@@ -49,6 +49,12 @@ export default function AdminShell({ title, children }) {
           </Link>
 
           <Link
+            href="/admin/homepage-services"
+            className={`admin-link ${pathname.startsWith("/admin/homepage-services") ? "active" : ""}`}
+          >
+            <i className="ri-briefcase-line"></i> Services
+          </Link>
+          <Link
             href="/admin/works"
             className={`admin-link ${pathname.startsWith("/admin/works") ? "active" : ""}`}
           >
