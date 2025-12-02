@@ -80,7 +80,7 @@ export default function Navbar() {
           </button>
 
           {/* CTA */}
-          <a href="#contact" className="btn btn-primary btn-cta">Get Quote</a>
+          {/* <a href="#contact" className="btn btn-primary btn-cta">Get Quote</a> */}
 
           {/* Mobile Toggle */}
           <button
@@ -96,8 +96,11 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div className={`mobile-menu ${mobileMenu ? "show" : ""}`}>
         <a href="/" className="mobile-link">Home</a>
-        <a href="/services" className="mobile-link">Services</a>
         <a href="#about" className="mobile-link">About</a>
+        <a href="#services" className="mobile-link">Services</a>
+        <a href="#works" className="mobile-link">Works</a>
+        <a href="#testimonials" className="mobile-link">Testimonials</a>
+        <a href="#faq" className="mobile-link">FAQ</a>
         <a href="#contact" className="mobile-link">Contact</a>
       </div>
     </header>

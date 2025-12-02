@@ -15,34 +15,172 @@ body {
 }
 
 /* Hero */
-.hero {
-  min-height: 80vh;
+
+.hero-section {
+  height: 85vh;
+  min-height: 600px;
   background-image: url("https://images.unsplash.com/photo-1649038780045-235e4b6e40b4?q=80&w=1600&auto=format&fit=crop");
   background-size: cover;
   background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
 }
+
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 18, 50, 0.9) 0%,
-    rgba(0, 30, 80, 0.8) 50%,
-    rgba(0, 30, 80, 0.2) 100%
+    rgba(0, 18, 50, 0.85) 0%,
+    rgba(0, 18, 50, 0.55) 50%,
+    rgba(0, 18, 50, 0.2) 100%
   );
 }
-.hero .container {
-  position: relative;
-  z-index: 2;
-}
+
+/* Badge */
 .hero-badge {
-  background-color: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.9rem;
 }
-.text-accent {
-  color: var(--accent);
+
+/* Title */
+.hero-title {
+  line-height: 1.2;
 }
+
+/* Subtitle */
+.hero-subtitle {
+  max-width: 650px;
+  opacity: 0.95;
+}
+
+/* CTA Buttons */
+.hero-buttons .btn-lg {
+  padding: 12px 26px;
+  font-size: 1.1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center;
+    padding: 60px 0;
+    height: auto;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+
+  //  HERO ANIMATIONS + EFFECTS
+
+/* Parallax background movement */
+.hero-section {
+  background-attachment: fixed;
+  animation: bgMove 18s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove {
+  0% { background-position: center; }
+  100% { background-position: center 20%; }
+}
+
+/* Animated glowing text */
+.hero-glow {
+  color: #ffcc00;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.8),
+               0 0 20px rgba(255, 204, 0, 0.4);
+  animation: glowPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 6px rgba(255,204,0,0.6); }
+  50% { text-shadow: 0 0 16px rgba(255,204,0,1); }
+  100% { text-shadow: 0 0 6px rgba(255,204,0,0.6); }
+}
+
+/* Fade-in animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeUp 0.8s forwards ease-out;
+}
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating particles effect */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.18) 2px, transparent 2px);
+  background-size: 50px 50px;
+  opacity: 0.18;
+  animation: floatParticles 12s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes floatParticles {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-60px); }
+}
+
+/* Buttons animation */
+.hero-btn-primary {
+  background: #ffcc00;
+  color: #111;
+  border: none;
+  transition: 0.3s;
+}
+.hero-btn-primary:hover {
+  background: #ffdd44;
+  transform: translateY(-3px);
+}
+
+.hero-btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+  transition: 0.3s;
+}
+.hero-btn-outline:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-3px);
+}
+
+/* Scroll-down Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  opacity: 0.8;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px); }
+}
+
 
 /* Services cards */
 .section-title {
@@ -276,7 +414,7 @@ body {
 }
 
 .dark-mode .modern-navbar {
-  background: rgba(20, 20, 20, 0.8);
+  background: rgb(10 10 10);
 }
 
 .logo-icon {
@@ -422,7 +560,7 @@ body {
 .dark-mode .services-detailed,
 .dark-mode .pricing-section-dark,
 .dark-mode .why-section {
-  background-color: #0d1117 !important;
+  background-color: #111827 !important;
   color: #ddd !important;
 }
 
@@ -630,6 +768,105 @@ body {
 }
 
 /* Contact Items */
+
+/* Premium Contact Section */
+.contact-premium-section {
+  background: linear-gradient(to bottom, #f8f9ff, #eef2ff);
+}
+
+.dark-mode .contact-premium-section {
+  background: #0d1117 !important;
+}
+
+/* Glass cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 16px;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.dark-mode .glass-card {
+  background: rgba(20, 20, 20, 0.55);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Premium Input Fields */
+.premium-input {
+  padding: 12px;
+  border-radius: 12px;
+  transition: 0.3s;
+  border: 1px solid #d6d6d6;
+}
+
+.premium-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.2);
+}
+
+.dark-mode .premium-input {
+  background: #161b22;
+  color: white;
+  border: 1px solid #30363d;
+}
+
+/* Button */
+.premium-btn {
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  background: #25d366;
+  color: white;
+  width: 56px;
+  height: 56px;
+  font-size: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 999;
+  transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.05);
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.9s forwards ease-out;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpPage 0.9s forwards ease-out;
+}
+
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes fadeUpPage {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 .footer-contact {
   list-style: none;
   padding: 0;
@@ -1181,4 +1418,13 @@ html {
 .dark-mode .toast {
   background: #111;
   color: #fff;
+}
+
+#about,
+#services,
+#works,
+#testimonials,
+#faq,
+#contact {
+  scroll-margin-top: 40px;   /* adjust depending on your navbar height */
 }

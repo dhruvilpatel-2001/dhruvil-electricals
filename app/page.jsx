@@ -41,7 +41,7 @@ export default async function HomePage() {
       <StatsSection stats={stats || []} />
       <WhyChooseSection items={whyItems || []} />
       <ContactPage/>
-      <CTASection cta={cta || null} />
+      {/* <CTASection cta={cta || null} /> */}
     </>
   );
 }
