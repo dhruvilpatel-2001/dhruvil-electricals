@@ -3,3 +3,4 @@ Remove a Extra Pages
 Create a About page 
 in Contact page create a smtp 
 Fix a Navifation Url Proteted 
+add a Smtp
