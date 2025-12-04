@@ -13,7 +13,6 @@ export default function NewHomeServicePage() {
   const [form, setForm] = useState({
     title: "",
     description: "",
-    icon_url: "",
     image_url: ""
   });
 
@@ -80,23 +79,8 @@ export default function NewHomeServicePage() {
           ></textarea>
         </div>
 
-        {/* Upload Icon */}
-        <div className="mb-3">
-          <label className="form-label">Upload Icon</label>
-          <input type="file" className="form-control" onChange={(e) => handleFileUpload(e, "icon_url")} />
-
-          {uploading && <small className="text-info">Uploading…</small>}
-
-          {form.icon_url && (
-            <img 
-              src={form.icon_url}
-              width="60"
-              height="60"
-              className="mt-2 rounded"
-              style={{ objectFit: "cover" }}
-            />
-          )}
-        </div>
+   
+        
 
         {/* Upload Service Image */}
         <div className="mb-3">

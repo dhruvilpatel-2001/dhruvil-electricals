@@ -51,7 +51,7 @@ export default function AdminHomeServicesPage() {
           <thead>
             <tr>
               <th>ID</th>
-              <th>Icon</th>
+              
               <th>Title</th>
               <th>Image</th>
               <th></th>
@@ -62,19 +62,6 @@ export default function AdminHomeServicesPage() {
             {services.map((s) => (
               <tr key={s.id}>
                 <td>{s.id}</td>
-
-                {/* Icon Preview */}
-                <td>
-                  {s.icon_url && (
-                    <img 
-                      src={s.icon_url} 
-                      width="40" 
-                      height="40" 
-                      style={{ objectFit: "cover", borderRadius: 8 }}
-                    />
-                  )}
-                </td>
-
                 <td>{s.title}</td>
 
                 {/* Image Preview */}

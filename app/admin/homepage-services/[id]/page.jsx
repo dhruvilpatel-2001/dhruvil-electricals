@@ -103,26 +103,7 @@ export default function EditHomeServicePage() {
           ></textarea>
         </div>
 
-        {/* ICON UPLOAD */}
-        <div className="mb-3">
-          <label className="form-label">Replace Icon</label>
-          <input
-            type="file"
-            className="form-control"
-            onChange={(e) => handleFileUpload(e, "icon_url")}
-          />
-          {uploading && <small className="text-info">Uploading...</small>}
-
-          {form.icon_url && (
-            <img
-              src={form.icon_url}
-              width="60"
-              height="60"
-              className="mt-2 rounded"
-              style={{ objectFit: "cover" }}
-            />
-          )}
-        </div>
+       
 
         {/* IMAGE UPLOAD */}
         <div className="mb-3">

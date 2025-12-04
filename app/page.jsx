@@ -9,6 +9,7 @@ import HomeFaqSection from "./components/HomeFaqSection";
 import HomeTestimonialsSection from "./components/HomeTestimonialsSection";
 import HomeBrandsSection from "./components/HomeBrandsSection";
 import ContactPage from "./contact/page";
+import AboutPage from "./about/page";
 
 export default async function HomePage() {
   const [
@@ -32,6 +33,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
+      <AboutPage/>
       <HomeServicesSection services={services || []} />
       <HomeTestimonialsSection testimonials={testimonials || []} />
       <HomeFaqSection faq={faq || []} />

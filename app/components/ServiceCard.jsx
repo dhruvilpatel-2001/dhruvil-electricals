@@ -7,14 +7,10 @@ export default function ServiceCard({ service }) {
             <img
               src={service.image_url}
               alt={service.title}
-              className="img-fluid service-card-img"
+              className="service-card-img"
             />
           )}
-          {service.icon && (
-            <div className="service-card-icon">
-              <i className={service.icon}></i>
-            </div>
-          )}
+          
         </div>
         <div className="service-card-body">
           <h3 className="service-card-title">{service.title}</h3>
