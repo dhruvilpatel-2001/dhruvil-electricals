@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import AdminShell from "../../AdminShell";
-import { supabase } from "../../lib/supabaseClient.js";
+import { supabase } from "@/lib/supabaseClient.js";
 
 export default function EditFAQPage() {
   const { id } = useParams();

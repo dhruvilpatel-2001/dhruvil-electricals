@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import AdminShell from "../../AdminShell";
-import { supabase } from "../../lib/supabaseClient.js";
+import { supabase } from "@/lib/supabaseClient.js";
 
 export default function NewFAQPage() {
   const router = useRouter();

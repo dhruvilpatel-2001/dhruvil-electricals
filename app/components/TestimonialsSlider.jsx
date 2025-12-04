@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { useEffect, useState } from "react";
-import { supabase } from "../../lib/supabaseClient.js";
+import { supabase } from "@/lib/supabaseClient.js";
 export default function TestimonialsSlider() {
   const [testimonials, setTestimonials] = useState([]);
 

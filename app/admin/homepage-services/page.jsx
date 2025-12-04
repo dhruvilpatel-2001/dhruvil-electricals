@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import AdminShell from "../AdminShell";
-import { supabase } from "../../lib/supabaseClient.js";
+import { supabase } from "@/lib/supabaseClient.js";
 import Toast from "@/app/components/Toast";
 
 export default function AdminHomeServicesPage() {
