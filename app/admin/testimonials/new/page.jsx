@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import AdminShell from "../../AdminShell";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "../../lib/supabaseClient.js";
 
 export default function NewTestimonialPage() {
   const router = useRouter();

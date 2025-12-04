@@ -1,4 +1,4 @@
-// import { supabase } from "@/lib/supabaseClient";
+// import { supabase } from "../../lib/supabaseClient.js";
 
 // export default async function FAQPage() {
 //   const { data: faq } = await supabase
@@ -38,7 +38,7 @@
 // }
 
 
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "../../lib/supabaseClient.js";
 
 export default async function FAQPage() {
   const { data: faqs } = await supabase

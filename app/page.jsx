@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "../lib/supabaseClient.js";
 import Hero from "./components/Hero";
 import HomeServicesSection from "./components/HomeServicesSection";
 import StatsSection from "./components/StatsSection";

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import AdminShell from "../AdminShell";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "../../lib/supabaseClient.js";
 
 export default function AdminFAQPage() {
   const [faq, setFaq] = useState([]);

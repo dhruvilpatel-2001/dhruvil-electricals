@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "../../lib/supabaseClient.js";
 
 export default async function WorksPage() {
   const { data: works } = await supabase
