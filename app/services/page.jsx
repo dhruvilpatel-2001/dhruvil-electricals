@@ -1,4 +1,6 @@
 import AutoResizeImage from "../components/AutoResizeImage";
+import { getData } from "@/lib/getData";
+
 
 export default async function ServicesPage() {
   const { categories } = await getData();
