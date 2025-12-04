@@ -101,7 +101,7 @@ export default function Navbar() {
         <a href="#works" className="mobile-link">Works</a>
         <a href="#testimonials" className="mobile-link">Testimonials</a>
         <a href="#faq" className="mobile-link">FAQ</a>
-        <a href="#contact" className="mobile-link">Contact</a>
+        {/* <a href="#contact" className="mobile-link">Contact</a> */}
       </div>
     </header>
   );
