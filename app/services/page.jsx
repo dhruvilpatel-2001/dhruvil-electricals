@@ -1,5 +1,5 @@
 import AutoResizeImage from "../components/AutoResizeImage";
-import { getData } from "@/lib/getData";
+import getData from "@/lib/getData.js";
 
 
 export default async function ServicesPage() {
