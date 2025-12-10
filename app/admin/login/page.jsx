@@ -13,6 +13,7 @@ export default function AdminLoginPage() {
 
     if (password === adminPass) {
       localStorage.setItem("admin", "true");
+      document.cookie = "admin-auth=true; path=/; max-age=86400";
       router.push("/admin/dashboard");
     } else {
       alert("Incorrect password");

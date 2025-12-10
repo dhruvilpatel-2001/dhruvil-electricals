@@ -1,6 +1,6 @@
 hero section click to redirect to service pls this type create a service 
 Remove a Extra Pages 
-Create a About page 
+Create a About page  ===> Donn 
 in Contact page create a smtp 
-Fix a Navifation Url Proteted 
+Fix a Navifation Url Proteted   ===> Done
 add a Smtp

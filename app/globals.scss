@@ -1544,7 +1544,7 @@ html {
 }
 
 .dark-mode .highlight {
-  background: #facc15;
+  background: #0f173c;
   color: #111;
 }
 
@@ -1590,4 +1590,119 @@ html {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+  //  PREMIUM NAVBAR
+
+.premium-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 18px 0;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(16px);
+  transition: 0.3s ease;
+}
+
+.nav-scrolled {
+  padding: 10px 0 !important;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Brand */
+.logo-icon { transition: 0.3s; }
+.premium-navbar:hover .logo-icon { transform: rotate(-10deg); }
+
+/* Link Styling */
+.fancy-link {
+  font-weight: 600;
+  position: relative;
+  color: #333;
+  background: transparent;
+  border: none;
+  font-size: 15px;
+}
+
+.fancy-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s;
+}
+
+.fancy-link:hover::after,
+.active-link::after {
+  width: 100%;
+}
+
+/* Active link color */
+.active-link {
+  color: var(--primary) !important;
+}
+
+/* Theme Button */
+.theme-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  background: transparent;
+}
+
+.theme-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Mobile Menu */
+.mobile-toggle {
+  background: none;
+  border: none;
+  font-size: 26px;
+}
+
+.mobile-menu {
+  background: #fff;
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  transition: 0.3s ease;
+}
+
+.mobile-menu.show {
+  display: flex;
+}
+
+.mobile-link {
+  font-size: 18px;
+  color: #333;
+  background: none;
+  border: none;
+}
+
+/* Dark Mode */
+.dark-mode .premium-navbar {
+  background: rgba(10,10,10,0.7);
+}
+
+.dark-mode .fancy-link,
+.dark-mode .mobile-link,
+.dark-mode .brand-text {
+  color: #eee;
+}
+
+.dark-mode .theme-btn {
+  border-color: #fff;
 }

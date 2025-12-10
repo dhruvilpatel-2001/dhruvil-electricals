@@ -19,7 +19,8 @@ export default function AdminShell({ title, children }) {
   }, [router]);
 
   const handleLogout = () => {
-    localStorage.removeItem("admin");
+    // localStorage.removeItem("admin");
+    document.cookie = "admin-auth=true; path=/; max-age=86400";
     router.push("/admin/login");
   };
 
@@ -74,11 +75,12 @@ export default function AdminShell({ title, children }) {
           >
             <i className="ri-question-line"></i> FAQ
           </Link>
-        </nav>
-
-        <button onClick={handleLogout} className="btn btn-sm btn-outline-light mt-auto">
+          <button onClick={handleLogout} className="btn btn-sm btn-outline-light mt-auto">
           <i className="ri-logout-box-r-line me-1"></i> Logout
         </button>
+        </nav>
+
+        
       </aside>
 
       {/* Main content */}

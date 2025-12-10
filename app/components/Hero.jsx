@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="hero-section position-relative d-flex align-items-center text-white">
+    <section id="home" className="hero-section position-relative d-flex align-items-center text-white">
       {/* Overlay */}
       <div className="hero-overlay"></div>
 
@@ -29,7 +29,7 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="d-flex flex-wrap gap-3 hero-buttons fade-in-up delay-3">
-          <a href="/services" className="btn hero-btn-primary btn-lg d-flex align-items-center gap-2">
+          <a href="/#services" className="btn hero-btn-primary btn-lg d-flex align-items-center gap-2">
             Explore Services <i className="ri-arrow-right-line"></i>
           </a>
 
