@@ -1,0 +1,114 @@
+/* Full screen wrapper */
+.nf-wrapper {
+  height: 100vh;
+  width: 100%;
+  background: #071225;
+  background-image: radial-gradient(circle, #0b1c33, #071225);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Electric circuit background lines */
+.nf-wrapper::before,
+.nf-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 160%;
+  height: 160%;
+  background: url('../public/images/404bg.png'); /* circuit lines */
+  opacity: 0.1;
+  animation: circuitMove 20s linear infinite;
+}
+
+.nf-wrapper::after {
+  animation-direction: reverse;
+  opacity: 0.8;
+}
+
+@keyframes circuitMove {
+  0% { transform: translate(0,0) scale(1); }
+  100% { transform: translate(-200px,-200px) scale(1.1); }
+}
+
+/* Center content */
+.nf-content {
+  text-align: center;
+  z-index: 10;
+  color: #fff;
+}
+
+/* Big glowing 404 */
+.nf-404 {
+  font-size: 160px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #008cff, #00eaff, #ffd700);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 25px #0099ff, 0 0 70px #00eaff;
+  letter-spacing: 5px;
+}
+
+/* Title */
+.nf-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-top: -20px;
+}
+
+/* Subtitle */
+.nf-subtitle {
+  font-size: 20px;
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+/* Search box */
+.nf-search-box {
+  width: 350px;
+  max-width: 90%;
+  margin: 0 auto 25px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.nf-search-box i {
+  color: #00eaff;
+  font-size: 20px;
+}
+
+.nf-search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Button */
+.nf-home-btn {
+  padding: 12px 26px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+  transition: 0.2s ease;
+}
+
+.nf-home-btn:hover {
+  background: #005fcc;
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.8);
+}
